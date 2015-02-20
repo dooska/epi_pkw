@@ -1,4 +1,5 @@
 class VoivodeshipsController < InheritedResources::Base
+	before_filter :authenticate_user!
 
   private
 

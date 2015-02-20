@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+
+  resources :roles
+
+  root 'voivodeships#index'
+  devise_for :users
+
+  scope "/admin" do
+  resources :users
+  end
   resources :votes
 
   resources :constituencies
