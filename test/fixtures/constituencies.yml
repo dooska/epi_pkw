@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  voivodeship_id: 
+  voters: 1
+  used_ballots: 1
+  invalid_no_choise: 1
+  invalid_more_choises: 1
+  invalid_other: 1
+
+two:
+  name: MyString
+  voivodeship_id: 
+  voters: 1
+  used_ballots: 1
+  invalid_no_choise: 1
+  invalid_more_choises: 1
+  invalid_other: 1
