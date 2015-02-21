@@ -1,6 +1,6 @@
 ActiveAdmin.register User do
 
-  permit_params :name, :email, :role, :constituency
+  permit_params :name, :email, :role_id, :role, :constituency_id, :constituency_id
   actions :all
   menu label: "Uzytkownicy"
   filter :name, label: "Nazwa użytkownika"
@@ -20,7 +20,7 @@ ActiveAdmin.register User do
       f.input :name, label: "Nazwa użytkownika"
       f.input :email, label: "Email" 
       f.input :role, label: "Uprawnienia"
-      #f.input :constituency, label: "Okręg wyborczy" 
+      f.input :constituency, as: :radio, label: "Okręg wyborczy" 
     end
     actions
   end

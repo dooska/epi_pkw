@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150220213101) do
+ActiveRecord::Schema.define(version: 20150221190310) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -48,8 +48,12 @@ ActiveRecord::Schema.define(version: 20150220213101) do
 
   create_table "committees", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "committees_voivodeships", id: false, force: :cascade do |t|
@@ -67,10 +71,8 @@ ActiveRecord::Schema.define(version: 20150220213101) do
     t.integer  "invalid_other"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
-    t.integer  "user_id"
   end
 
-  add_index "constituencies", ["user_id"], name: "index_constituencies_on_user_id"
   add_index "constituencies", ["voivodeship_id"], name: "index_constituencies_on_voivodeship_id"
 
   create_table "roles", force: :cascade do |t|
@@ -95,8 +97,10 @@ ActiveRecord::Schema.define(version: 20150220213101) do
     t.datetime "updated_at"
     t.string   "name"
     t.integer  "role_id"
+    t.integer  "constituency_id"
   end
 
+  add_index "users", ["constituency_id"], name: "index_users_on_constituency_id"
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   add_index "users", ["role_id"], name: "index_users_on_role_id"

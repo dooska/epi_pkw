@@ -18,7 +18,7 @@ ActiveAdmin.register Constituency do
       f.input :name, label: "Nazwa okręgu"
       f.input :voters, label: "Liczba uprawnionych do głosowania" 
       f.input :voivodeship, as: :radio, label: "Województwo"
-      f.input :user, label: "Użytkownik" 
+    #  f.input :user, label: "Użytkownik" 
     end
     actions
   end

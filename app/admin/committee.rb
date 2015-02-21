@@ -1,6 +1,6 @@
 ActiveAdmin.register Committee do
 
-  permit_params :name, :voivodeship #:image_file_name, :image_content_type, :image_file_size 
+  permit_params :name, :image, voivodeship_ids: []
   actions :all
   menu label: "Komitety wyborcze"
   #includes :voivodeship
@@ -15,9 +15,9 @@ ActiveAdmin.register Committee do
   form do |f|
     f.inputs "Komitet wyborczy" do
       f.input :name, label: "Nazwa komitetu"
-      f.input :voivodeship, as: :radio, label: "Województwo" 
+      f.input :voivodeships, as: :check_boxes, label: "Województwo"
     end
-    actions
+    f.actions
   end
 
   #filter :voivodeships as: :check_boxes, label: "Województwo"
