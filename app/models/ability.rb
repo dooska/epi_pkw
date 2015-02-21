@@ -3,9 +3,9 @@ class Ability
 
   def initialize(user)
     def initialize(user)
-    if user.admin?
-      can :manage, :all
-    else
+    #if user.admin?
+     # can :manage, :all
+    #else
       can :read, :all
     end
   end
@@ -35,5 +35,5 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
-  end
+  #end
 end

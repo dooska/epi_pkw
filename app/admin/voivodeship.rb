@@ -3,6 +3,10 @@ ActiveAdmin.register Voivodeship do
   permit_params :name, :electoral_mandates
   actions :all
   menu label: "Województwa"
+  filter :name, label: "Nazwa województwa"
+  filter :committee, label: "Komitet wyborczy"
+  filter :constituency, label: "Okręg wyborczy"
+
 
   index do 
    column "Nazwa", :name

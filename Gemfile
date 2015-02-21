@@ -54,5 +54,7 @@ group :development, :test do
 
   gem 'better_errors'
   gem 'binding_of_caller'
+
+  gem 'paperclip', '~> 4.2.1'
 end
 

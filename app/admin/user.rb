@@ -3,6 +3,9 @@ ActiveAdmin.register User do
   permit_params :name, :email, :role, :constituency
   actions :all
   menu label: "Uzytkownicy"
+  filter :name, label: "Nazwa użytkownika"
+  filter :role, label: "Uprawnienia"
+  filter :constituency, label: "Okręg wyborczy"
 
   index do 
    column "Nazwa użytkownika", :name
@@ -10,6 +13,16 @@ ActiveAdmin.register User do
    column "Uprawnienia", :role
    column "Okręg wyborczy", :constituency
    actions  
+  end
+
+  form do |f|
+    f.inputs "Użytkownik" do
+      f.input :name, label: "Nazwa użytkownika"
+      f.input :email, label: "Email" 
+      f.input :role, label: "Uprawnienia"
+      #f.input :constituency, label: "Okręg wyborczy" 
+    end
+    actions
   end
 
 
