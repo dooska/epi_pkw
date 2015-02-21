@@ -3,6 +3,26 @@ ActiveAdmin.register Constituency do
   actions :all
   menu label: "Okręgi wyborcze"
 
+  index do
+    column "Nazwa okręgu", :name
+    column "Liczba uprawnionych do głosowania", :voters
+    column "Województwo", :voivodeship
+    actions 
+  end
+
+  form do |f|
+    f.inputs "Okręg wyborczy" do
+      f.input :name, label: "Nazwa okręgu"
+      f.input :voters, label: "Liczba uprawnionych do głosowania" 
+      f.input :voivodeship, as: :radio, label: "Województwo" 
+    end
+    actions
+  end
+
+
+
+  #filter :voivodeship as: :check_boxes, label: "Województwo"
+
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters

@@ -49,5 +49,10 @@ group :development, :test do
   gem 'activeadmin', github: 'activeadmin'
 
   gem 'devise'
+
+  gem 'cancancan', '~> 1.10'
+
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 

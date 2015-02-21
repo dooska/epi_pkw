@@ -2,12 +2,12 @@ Rails.application.routes.draw do
 
   resources :roles
 
-  root 'voivodeships#index'
+  root :to => 'voivodeships#index'
   devise_for :users
 
-  scope "/admin" do
+  #scope "/admin" do
   resources :users
-  end
+  #end
   resources :votes
 
   resources :constituencies

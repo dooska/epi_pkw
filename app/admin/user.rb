@@ -1,12 +1,14 @@
-ActiveAdmin.register Voivodeship do
+ActiveAdmin.register User do
 
-  permit_params :name, :electoral_mandates
+  permit_params :name, :email, :role, :constituency
   actions :all
-  menu label: "Województwa"
+  menu label: "Uzytkownicy"
 
   index do 
-   column "Nazwa", :name
-   column "Liczba mandatów", :electoral_mandates
+   column "Nazwa użytkownika", :name
+   column "Email", :email
+   column "Uprawnienia", :role
+   column "Okręg wyborczy", :constituency
    actions  
   end
 
