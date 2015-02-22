@@ -12,11 +12,22 @@ ActiveAdmin.register Committee do
     actions 
   end
 
-  form do |f|
-    f.inputs "Komitet wyborczy" do
-      f.input :name, label: "Nazwa komitetu"
-      f.input :voivodeships, as: :check_boxes, label: "Województwo"
+  show do |ad|
+  attributes_table do
+    row :name
+    row :image do
+      image_tag(ad.image.url(:medium))
     end
+    # Will display the image on show object page
+  end
+ end
+
+  form :html => { :enctype => "multipart/form-data" } do |f|
+      f.inputs "Committee" do
+      f.input :name, label: "Nazwa komitetu"
+      f.input :image, :as => :file
+      f.input :voivodships, as: :check_boxes, label: "Województwo"
+  end
     f.actions
   end
 

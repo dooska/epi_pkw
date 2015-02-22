@@ -1,7 +1,7 @@
 class ConstituenciesController < InheritedResources::Base
 	before_action :set_voivodeships, only: [:new, :create, :edit, :update]
 	before_filter :authenticate_user!
-	load_and_authorize_resource
+	#load_and_authorize_resource
 
   private
 
