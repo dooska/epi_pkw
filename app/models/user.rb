@@ -8,11 +8,7 @@ class User < ActiveRecord::Base
   belongs_to :constituency
 
   validates_presence_of :name
-	#before_save :assign_role
 
-	def admin?
-  self.role.name == "Admin"
-	end
 
 	def central?
   self.role.name == "Central"
@@ -22,7 +18,4 @@ class User < ActiveRecord::Base
   self.role.name == "Regional"
 	end
 
-	#def assign_role
-  #self.role = Role.find_by name: "Regional" if self.role.nil?
-	#end
 end

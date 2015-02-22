@@ -1,10 +1,13 @@
 ActiveAdmin.register Committee do
 
-  permit_params :name, :image, voivodeship_ids: []
+  permit_params :name, :image, :voivodeship, voivodeship_ids: []
   actions :all
   menu label: "Komitety wyborcze"
   #includes :voivodeship
   #belongs_to :voivodeship
+
+  filter :voivodeships, label: "Województwo"
+  filter :name, label: "Nazwa komitetu"
 
   index do
     column "Nazwa komitetu", :name

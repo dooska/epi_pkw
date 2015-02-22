@@ -14,6 +14,14 @@ ActiveAdmin.register Voivodeship do
    actions  
   end
 
+  form do |f|
+    f.inputs "Województwo" do
+      f.input :name, label: "Nazwa województwa"
+      f.input :electoral_mandates, label: "Liczba mandatów"
+    end
+    actions
+  end
+
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
