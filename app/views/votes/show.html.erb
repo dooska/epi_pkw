@@ -1,19 +1,19 @@
 
 
 <p>
-  <strong>Committee:</strong>
+  <strong>Komitet wyborczy:</strong>
   <%= @vote.committee %>
 </p>
 
 <p>
-  <strong>Constituency:</strong>
+  <strong>Okręg wyborczy:</strong>
   <%= @vote.constituency %>
 </p>
 
 <p>
-  <strong>Yes vote:</strong>
+  <strong>Ważne głosy:</strong>
   <%= @vote.yes_vote %>
 </p>
 
-<%= link_to 'Edit', edit_vote_path(@vote) %> |
-<%= link_to 'Back', votes_path %>
+<%= link_to 'Edytuj', edit_vote_path(@vote) %> |
+<%= link_to 'Wróć', votes_path %>

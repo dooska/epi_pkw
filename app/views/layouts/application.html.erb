@@ -10,11 +10,11 @@
 	<!--<p class="notice"><%= notice %></p>
 	<p class="alert"><%= alert %></p>-->
 	<% if user_signed_in? %>
-  	Signed in as <%= current_user.email %>. Not you?
-  	<%= link_to "Edit profile", edit_user_registration_path %>
-  	<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+  	Zalogowany jako <%= current_user.email %>. Nie ty?
+  	<%= link_to "Edytuj profil", edit_user_registration_path %>
+  	<%= link_to "Wyloguj", destroy_user_session_path, :method => :delete %>
 	<% else %>
-  	<%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+  	<%= link_to "Zarejestruj", new_user_registration_path %> or <%= link_to "Zaloguj", new_user_session_path %>
 	<% end %>
  
 	<% flash.each do |name, msg| %>

@@ -11,7 +11,9 @@ ActiveAdmin.register Committee do
 
   index do
     column "Nazwa komitetu", :name
-    column "Województwo", :voivodeship
+    column "Województwa" do |committee|
+      committee.voivodeships.map(&:name)
+    end
     actions 
   end
 
@@ -29,7 +31,7 @@ ActiveAdmin.register Committee do
       f.inputs "Committee" do
       f.input :name, label: "Nazwa komitetu"
       f.input :image, :as => :file
-      f.input :voivodships, as: :check_boxes, label: "Województwo"
+      f.input :voivodeships, as: :check_boxes, label: "Województwo"
   end
     f.actions
   end

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :roles
 
-  root :to => 'voivodeships#index'
+  root :to => 'home#index'
   devise_for :users
 
   #scope "/admin" do

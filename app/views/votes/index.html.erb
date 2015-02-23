@@ -1,13 +1,13 @@
 
 
-<h1>Listing Votes</h1>
+
 
 <table>
   <thead>
     <tr>
-      <th>Committee</th>
-      <th>Constituency</th>
-      <th>Yes vote</th>
+      <th>Komitet wyborczy</th>
+      <th>Okręg wyborczy</th>
+      <th>Ważne głosy</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,9 +18,9 @@
         <td><%= vote.committee %></td>
         <td><%= vote.constituency %></td>
         <td><%= vote.yes_vote %></td>
-        <td><%= link_to 'Show', vote %></td>
-        <td><%= link_to 'Edit', edit_vote_path(vote) %></td>
-        <td><%= link_to 'Destroy', vote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Pokaż', vote %></td>
+        <td><%= link_to 'Edytuj', edit_vote_path(vote) %></td>
+        <td><%= link_to 'Usuń', vote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Vote', new_vote_path %>
+<%= link_to 'Nowe głosy', new_vote_path %>

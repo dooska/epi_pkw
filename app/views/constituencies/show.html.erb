@@ -1,38 +1,38 @@
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nazwa:</strong>
   <%= @constituency.name %>
 </p>
 
 <p>
-  <strong>Voivodeship:</strong>
+  <strong>Województwo:</strong>
   <%= @constituency.voivodeship %>
 </p>
 
 <p>
-  <strong>Voters:</strong>
+  <strong>Liczba głosujących:</strong>
   <%= @constituency.voters %>
 </p>
 
 <p>
-  <strong>Used ballots:</strong>
+  <strong>Wydane karty:</strong>
   <%= @constituency.used_ballots %>
 </p>
 
 <p>
-  <strong>Invalid no choise:</strong>
+  <strong>Nieważny głos - brak wyboru:</strong>
   <%= @constituency.invalid_no_choise %>
 </p>
 
 <p>
-  <strong>Invalid more choises:</strong>
+  <strong>Nieważny głos - za dużo wyborów:</strong>
   <%= @constituency.invalid_more_choises %>
 </p>
 
 <p>
-  <strong>Invalid other:</strong>
+  <strong>Nieważny głos - inny powód:</strong>
   <%= @constituency.invalid_other %>
 </p>
 
-<%= link_to 'Edit', edit_constituency_path(@constituency) %> |
-<%= link_to 'Back', constituencies_path %>
+<%= link_to 'Edytuj', edit_constituency_path(@constituency) %> |
+<%= link_to 'Wróć', constituencies_path %>
