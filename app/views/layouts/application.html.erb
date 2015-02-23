@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>EpiPkw</title>
+  <title>Projekt EPI</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -10,12 +10,12 @@
 	<!--<p class="notice"><%= notice %></p>
 	<p class="alert"><%= alert %></p>-->
 	<% if user_signed_in? %>
-  	Zalogowany jako <%= current_user.email %>. Nie ty?
-  	<%= link_to "Edytuj profil", edit_user_registration_path %>
+  	Zalogowany jako <%= current_user.email %>
   	<%= link_to "Wyloguj", destroy_user_session_path, :method => :delete %>
 	<% else %>
-  	<%= link_to "Zarejestruj", new_user_registration_path %> or <%= link_to "Zaloguj", new_user_session_path %>
+  	<%= link_to "Zarejestruj", new_user_registration_path %> lub <%= link_to "Zaloguj", new_user_session_path %>
 	<% end %>
+  <%= link_to "Strona główna", root_path %>
  
 	<% flash.each do |name, msg| %>
   	<%= content_tag :div, msg, id: "flash_#{name}" %>

@@ -1,16 +1,17 @@
+<h3> Zestawienie głosów nieważnych </h3>
 
 <p>
-  <strong>Nazwa:</strong>
+  <strong>Nazwa okręgu:</strong>
   <%= @constituency.name %>
 </p>
 
 <p>
   <strong>Województwo:</strong>
-  <%= @constituency.voivodeship %>
+  <%= @constituency.voivodeship.name%>
 </p>
 
 <p>
-  <strong>Liczba głosujących:</strong>
+  <strong>Liczba uprawnionych do głosowania:</strong>
   <%= @constituency.voters %>
 </p>
 
@@ -20,19 +21,38 @@
 </p>
 
 <p>
-  <strong>Nieważny głos - brak wyboru:</strong>
+  <strong>Nieważne głosy - brak wyboru:</strong>
   <%= @constituency.invalid_no_choise %>
 </p>
 
 <p>
-  <strong>Nieważny głos - za dużo wyborów:</strong>
+  <strong>Nieważne głosy - za dużo wyborów:</strong>
   <%= @constituency.invalid_more_choises %>
 </p>
 
 <p>
-  <strong>Nieważny głos - inny powód:</strong>
+  <strong>Nieważne głosy - inny powód:</strong>
   <%= @constituency.invalid_other %>
 </p>
+
+<p>
+  <strong>Liczba wszytkich głósów nieważnych:</strong>
+  <% unless @constituency.invalid_no_choise.nil? %> 
+  <%= @constituency.invalid_no_choise + @constituency.invalid_more_choises + @constituency.invalid_other %> 
+  <% end %>
+</p>
+
+
+
+
+<h3>Zbiorcze wyniki danego okręgu </h3>
+  <ol>
+  <% @constituency.votes.each do |vote| %>
+    <li><strong><%= vote.committee.name %></strong>: <%= vote.amount %></li>
+  <% end %>
+  </ol>
+
+
 
 <%= link_to 'Edytuj', edit_constituency_path(@constituency) %> |
 <%= link_to 'Wróć', constituencies_path %>

@@ -4,8 +4,8 @@ ActiveAdmin.register Voivodeship do
   actions :all
   menu label: "Województwa"
   filter :name, label: "Nazwa województwa"
-  filter :committee, label: "Komitet wyborczy"
-  filter :constituency, label: "Okręg wyborczy"
+  filter :committees, label: "Komitet wyborczy"
+  filter :constituencies, label: "Okręg wyborczy"
 
 
   index do 

@@ -1,6 +1,8 @@
 class UserController < ApplicationController
-	before_filter :authenticate_user!
-  #load_and_authorize_resource
+  before_filter :authenticate_user!
+  load_and_authorize_resource
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_constituencies, only:[:new, :create, :edit, :update]
 
  # GET /users
   # GET /users.json
@@ -84,5 +86,15 @@ class UserController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:email, :password, :password_confirmation, :name, :role_id, :constituency_id)
+    end
+
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  def set_constituencies 
+      @constituencies = Constituency.all.map do |constituency| 
+        [constituency.name + ' ' + constituency.voivodeship.name, constituency.id]
+      end
     end
 end

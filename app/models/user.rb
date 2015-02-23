@@ -10,12 +10,14 @@ class User < ActiveRecord::Base
   validates_presence_of :name
 
 
-	def central?
-  self.role.name == "Central"
-	end
+def central?
+  return false if self.role.blank?
+    self.role.name == "Central"
+end
 
-	def regional?
-  self.role.name == "Regional"
-	end
+def regional?
+  return false if self.role.blank?
+    self.role.name == "Regional"
+end
 
 end

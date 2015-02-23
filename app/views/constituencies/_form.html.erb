@@ -12,31 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label "Nazwa" %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label "Województwo" %><br>
-    <%= f.text_field :voivodeship_id %>
-  </div>
-  <div class="field">
-    <%= f.label "Liczba głosujących" %><br>
-    <%= f.number_field :voters %>
-  </div>
-  <div class="field">
     <%= f.label "Wydane karty" %><br>
     <%= f.number_field :used_ballots %>
   </div>
+
   <div class="field">
-    <%= f.label "Nieważny głos - brak wyboru" %><br>
+    <%= f.label "Nieważne głosy - brak wyboru" %><br>
     <%= f.number_field :invalid_no_choise %>
   </div>
   <div class="field">
-    <%= f.label "Nieważny głos - za dużo wyborów" %><br>
+    <%= f.label "Nieważne głosy - za dużo wyborów" %><br>
     <%= f.number_field :invalid_more_choises %>
   </div>
   <div class="field">
-    <%= f.label "Nieważny głos - inny powód" %><br>
+    <%= f.label "Nieważne głosy - inny powód"%><br>
     <%= f.number_field :invalid_other %>
   </div>
   <div class="actions">
